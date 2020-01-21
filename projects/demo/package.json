@@ -18,7 +18,7 @@
         "core-js": "2.6.9",
         "rxjs": "6.5.2",
         "zone.js": "0.9.1",
-        "payment-request": "latest"
+        "@ng-web-apis/payment-request": "latest"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "^0.803.2",

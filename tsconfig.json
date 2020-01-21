@@ -19,7 +19,7 @@
         "typeRoots": ["node_modules/@types"],
         "lib": ["es2018", "dom"],
         "paths": {
-            "payment-request": ["projects/payment-request/src/public-api"]
+            "@ng-web-apis/payment-request": ["projects/payment-request/src/public-api"]
         }
     }
 }
