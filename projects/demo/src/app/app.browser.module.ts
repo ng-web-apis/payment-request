@@ -4,7 +4,6 @@ import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app.routes';
-import {StaticModule} from './modules/static/static.module';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -12,7 +11,6 @@ import {StaticModule} from './modules/static/static.module';
         FormsModule,
         BrowserModule.withServerTransition({appId: 'demo'}),
         AppRoutingModule,
-        StaticModule,
     ],
     declarations: [AppComponent],
     providers: [
