@@ -60,10 +60,15 @@ describe('Payment Request Service', () => {
 
         const promise = service.request(paymentDetails);
 
-        promise.then(result => {
-            expect(result).toBe(null);
-            done();
-        });
+        promise.then(
+            () => {},
+            error => {
+                expect(error.message).toBe(
+                    'Payment Request is not supported in your browser',
+                );
+                done();
+            },
+        );
     });
 
     it('returns null if Payment Request in cannot pay status', done => {
@@ -71,10 +76,13 @@ describe('Payment Request Service', () => {
 
         const promise = service.request(paymentDetails);
 
-        promise.then(result => {
-            expect(result).toBe(null);
-            done();
-        });
+        promise.then(
+            () => {},
+            error => {
+                expect(error.message).toBe('Payment Request cannot make the payment');
+                done();
+            },
+        );
     });
 
     it('returns response if Payment Request in can pay status', done => {

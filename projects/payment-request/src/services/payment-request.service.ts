@@ -25,16 +25,20 @@ export class PaymentRequestService {
         details: PaymentDetailsInit,
         methods: PaymentMethodData[] = this.paymentMethods,
         options: PaymentOptions = this.paymentOptions,
-    ): Promise<PaymentResponse | null> {
+    ): Promise<PaymentResponse> {
         if (!this.windowRef.PaymentRequest) {
-            return Promise.resolve(null);
+            return Promise.reject(
+                new Error('Payment Request is not supported in your browser'),
+            );
         }
 
         const gateway = new PaymentRequest(methods, details, options);
 
         return gateway.canMakePayment().then(canPay => {
             if (!canPay) {
-                return Promise.resolve(null);
+                return Promise.reject(
+                    new Error('Payment Request cannot make the payment'),
+                );
             }
 
             return gateway.show();
