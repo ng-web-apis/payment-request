@@ -63,9 +63,7 @@ describe('Payment Request Service', () => {
         promise.then(
             () => {},
             error => {
-                expect(error.message).toBe(
-                    'Payment Request is not supported in your browser',
-                );
+                expect(error).toBe('Payment Request is not supported in your browser');
                 done();
             },
         );
@@ -79,7 +77,7 @@ describe('Payment Request Service', () => {
         promise.then(
             () => {},
             error => {
-                expect(error.message).toBe('Payment Request cannot make the payment');
+                expect(error).toBe('Payment Request cannot make the payment');
                 done();
             },
         );
