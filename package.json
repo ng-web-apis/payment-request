@@ -52,7 +52,9 @@
         "email": "79601794011@ya.ru",
         "url": "http://marsibarsi.me/"
     },
-    "contributors": ["Alex Inkin <alexander@inkin.ru>"],
+    "contributors": [
+        "Alex Inkin <alexander@inkin.ru>"
+    ],
     "repository": "https://github.com/ng-web-apis/payment-request",
     "bugs": "https://github.com/ng-web-apis/payment-request/issues",
     "homepage": "https://github.com/ng-web-apis/payment-request#README",
@@ -68,6 +70,7 @@
         "@angular/platform-browser-dynamic": "^7.2.15",
         "@angular/platform-server": "^7.2.15",
         "@angular/router": "^7.2.15",
+        "@ng-web-apis/common": "^1.0.1",
         "@nguniversal/common": "^7.1.1",
         "@nguniversal/express-engine": "^7.1.1",
         "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
@@ -121,7 +124,10 @@
         }
     },
     "lint-staged": {
-        "*.{js,ts,html,md,less,json}": ["prettier --write", "git add"],
+        "*.{js,ts,html,md,less,json}": [
+            "prettier --write",
+            "git add"
+        ],
         "*.ts": "tslint"
     },
     "standard-version": {
