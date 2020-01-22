@@ -3,6 +3,12 @@ import {WINDOW} from '@ng-web-apis/common';
 import {PAYMENT_METHODS} from '../tokens/payment-methods';
 import {PAYMENT_OPTIONS} from '../tokens/payment-options';
 
+declare global {
+    interface Window {
+        PaymentRequest: PaymentRequest;
+    }
+}
+
 @Injectable({
     providedIn: 'root',
 })
