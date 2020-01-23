@@ -1,3 +1,17 @@
-<button (click)="pay()">
-    Заплатить чеканной
-</button>
+<div waPayment [paymentTotal]="total">
+    <div
+        *ngFor="let item of items"
+        waPaymentItem
+        [paymentLabel]="item.label"
+        [paymentAmount]="item.amount"
+    >
+        {{ item.label }} ({{ item.amount.value }} {{ item.amount.currency }})
+    </div>
+
+    <button
+        (waPaymentSubmit)="onPayment($event)"
+        (waPaymentError)="onPaymentError($event)"
+    >
+        Pay
+    </button>
+</div>
