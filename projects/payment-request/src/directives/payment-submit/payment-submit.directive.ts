@@ -15,16 +15,16 @@ export class PaymentSubmitDirective {
     waPaymentSubmit: Observable<PaymentResponse>;
 
     @Output()
-    waPaymentError: Observable<string>;
+    waPaymentError: Observable<Error | DOMException>;
 
     constructor(
         @Inject(PaymentDirective) paymentHost: PaymentDetailsInit,
         @Inject(PaymentRequestService) paymentRequest: PaymentRequestService,
-        @Inject(ElementRef) elementRef: ElementRef,
+        @Inject(ElementRef) {nativeElement}: ElementRef,
         @Inject(PAYMENT_METHODS) methods: PaymentMethodData[],
         @Inject(PAYMENT_OPTIONS) options: PaymentOptions,
     ) {
-        const requests$ = fromEvent(elementRef.nativeElement, 'click').pipe(
+        const requests$ = fromEvent(nativeElement, 'click').pipe(
             switchMap(() =>
                 from(paymentRequest.request({...paymentHost}, methods, options)).pipe(
                     catchError(error => of(error)),
