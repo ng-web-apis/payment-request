@@ -84,5 +84,5 @@ export class AppComponent {
         response.complete();
     }
 
-    onPaymentError(error: string) {}
+    onPaymentError(_: string) {}
 }
