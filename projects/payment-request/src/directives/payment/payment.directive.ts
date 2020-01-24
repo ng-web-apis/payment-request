@@ -2,7 +2,7 @@ import {ContentChildren, Directive, Input, QueryList} from '@angular/core';
 import {PaymentItemDirective} from '../payment-item/payment-item.directive';
 
 @Directive({
-    selector: '[waPayment]',
+    selector: '[waPayment][paymentTotal]',
 })
 export class PaymentDirective implements PaymentDetailsInit {
     @Input('paymentTotal')
