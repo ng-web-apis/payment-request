@@ -81,11 +81,8 @@ export class AppComponent {
     ];
 
     onPayment(response: PaymentResponse) {
-        console.log('Готово', response);
         response.complete();
     }
 
-    onPaymentError(error: string) {
-        console.log('Ошибка', error);
-    }
+    onPaymentError(error: string) {}
 }
