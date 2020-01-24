@@ -9,6 +9,7 @@ declare global {
     }
 }
 
+// @dynamic
 @Injectable({
     providedIn: 'root',
 })
@@ -27,14 +28,18 @@ export class PaymentRequestService {
         options: PaymentOptions = this.paymentOptions,
     ): Promise<PaymentResponse> {
         if (!this.windowRef.PaymentRequest) {
-            return Promise.reject('Payment Request is not supported in your browser');
+            return Promise.reject(
+                new Error('Payment Request is not supported in your browser'),
+            );
         }
 
         const gateway = new PaymentRequest(methods, details, options);
 
         return gateway.canMakePayment().then(canPay => {
-            if (canPay) {
-                return Promise.reject('Payment Request cannot make the payment');
+            if (!canPay) {
+                return Promise.reject(
+                    new Error('Payment Request cannot make the payment'),
+                );
             }
 
             return gateway.show();
