@@ -13,3 +13,9 @@ This is a library for declarative use of [Payment Request API](https://developer
 ## How to use
 
 ## Tokens
+
+#### waPayment
+
+#### waPaymentItem
+
+#### waPaymentSubmit
