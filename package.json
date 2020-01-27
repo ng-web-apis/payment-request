@@ -18,6 +18,7 @@
         "start:ssr": "npm run build:demo:ssr && npm run serve:ssr",
         "start:prerender": "npm run build:demo:prerender && npm run serve:prerender",
         "build": "ng build",
+        "postbuild": "node scripts/postbuild.js",
         "build:schematics": "tsc -p tsconfig.schematics.json",
         "build:demo:client": "ng run demo:build",
         "build:demo:server": "ng run demo:server",
@@ -38,13 +39,11 @@
         "release:patch": "npm run release -- --release-as patch",
         "release:minor": "npm run release -- --release-as minor",
         "release:major": "npm run release -- --release-as major",
-        "publish": "npm run build:all && npm publish:all",
-        "build:all": "npm run build:payment-request",
-        "publish:all": "npm run publish:payment-request",
         "build:payment-request": "ng run payment-request:build",
         "test:payment-request": "ng run payment-request:test",
         "test:payment-request:watch": "ng run payment-request:test --watch=true",
-        "publish:payment-request": "npm publish ./dist/payment-request"
+        "prepublish": "npm run build && ng build demo --configuration=production",
+        "publish": "npm publish ./dist/audio"
     },
     "license": "MIT",
     "author": {
@@ -52,9 +51,7 @@
         "email": "79601794011@ya.ru",
         "url": "http://marsibarsi.me/"
     },
-    "contributors": [
-        "Alex Inkin <alexander@inkin.ru>"
-    ],
+    "contributors": ["Alex Inkin <alexander@inkin.ru>"],
     "repository": "https://github.com/ng-web-apis/payment-request",
     "bugs": "https://github.com/ng-web-apis/payment-request/issues",
     "homepage": "https://github.com/ng-web-apis/payment-request#README",
@@ -127,10 +124,7 @@
         }
     },
     "lint-staged": {
-        "*.{js,ts,html,md,less,json}": [
-            "prettier --write",
-            "git add"
-        ],
+        "*.{js,ts,html,md,less,json}": ["prettier --write", "git add"],
         "*.ts": "tslint"
     },
     "standard-version": {
