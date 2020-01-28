@@ -27,7 +27,7 @@
                             },
                             "src/favicon.ico"
                         ],
-                        "styles": ["src/styles.css"],
+                        "styles": ["src/styles.css", "node_modules/highlight.js/styles/idea.css"],
                         "scripts": []
                     },
                     "configurations": {

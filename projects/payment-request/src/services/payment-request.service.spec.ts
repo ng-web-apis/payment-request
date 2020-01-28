@@ -1,5 +1,16 @@
 import {TestBed} from '@angular/core/testing';
+import {PAYMENT_REQUEST_SUPPORT} from '../tokens/payment-request-support';
 import {PaymentRequestService} from './payment-request.service';
+
+const paymentDetails = {
+    total: {
+        label: 'Matreshka',
+        amount: {
+            currency: 'RUB',
+            value: '140',
+        },
+    },
+};
 
 describe('Payment Request Service', () => {
     let service: PaymentRequestService;
@@ -23,16 +34,6 @@ describe('Payment Request Service', () => {
         }
     }
 
-    const paymentDetails = {
-        total: {
-            label: 'Matreshka',
-            amount: {
-                currency: 'RUB',
-                value: '140',
-            },
-        },
-    };
-
     beforeEach(() => {
         TestBed.configureTestingModule({
             providers: [PaymentRequestService],
@@ -55,21 +56,7 @@ describe('Payment Request Service', () => {
         service = TestBed.get(PaymentRequestService);
     });
 
-    it('cannot request and returns null if Payment Request is not supported', done => {
-        (global as any).PaymentRequest = undefined;
-
-        const promise = service.request(paymentDetails);
-
-        promise.then(
-            () => {},
-            error => {
-                expect(error.message).toBe('Payment Request is not supported in your browser');
-                done();
-            },
-        );
-    });
-
-    it('returns null if Payment Request in cannot pay status', done => {
+    it('throws an error if Payment Request in cannot pay status', done => {
         (global as any).PaymentRequest = FakePaymentRequest;
 
         const promise = service.request(paymentDetails);
@@ -94,5 +81,29 @@ describe('Payment Request Service', () => {
             expect(result).toBe(response);
             done();
         });
+    });
+});
+
+describe('Payment Request Service if unsupported', () => {
+    it('cannot request and throws an error if Payment Request is not supported', done => {
+        TestBed.configureTestingModule({
+            providers: [
+                {provide: PAYMENT_REQUEST_SUPPORT, useValue: false},
+                PaymentRequestService,
+            ],
+        });
+
+        const service: PaymentRequestService = TestBed.get(PaymentRequestService);
+        const promise = service.request(paymentDetails);
+
+        promise.then(
+            () => {},
+            error => {
+                expect(error.message).toBe(
+                    'Payment Request is not supported in your browser',
+                );
+                done();
+            },
+        );
     });
 });

@@ -10,6 +10,24 @@
 
 This is a library for declarative use of [Payment Request API](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API) with Angular 6+.
 
+## Install
+
+If you do not have [@ng-web-apis/common](https://github.com/ng-web-apis/common):
+```
+npm i @ng-web-apis/common
+```
+
+Now install the package:
+```
+npm i @ng-web-apis/payment-request
+```
+
 ## How to use
 
 ## Tokens
+
+#### waPayment
+
+#### waPaymentItem
+
+#### waPaymentSubmit

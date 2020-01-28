@@ -1,13 +1,7 @@
 import {Inject, Injectable} from '@angular/core';
-import {WINDOW} from '@ng-web-apis/common';
 import {PAYMENT_METHODS} from '../tokens/payment-methods';
 import {PAYMENT_OPTIONS} from '../tokens/payment-options';
-
-declare global {
-    interface Window {
-        PaymentRequest: PaymentRequest;
-    }
-}
+import {PAYMENT_REQUEST_SUPPORT} from '../tokens/payment-request-support';
 
 // @dynamic
 @Injectable({
@@ -15,7 +9,7 @@ declare global {
 })
 export class PaymentRequestService {
     constructor(
-        @Inject(WINDOW) private readonly windowRef: Window,
+        @Inject(PAYMENT_REQUEST_SUPPORT) private readonly canRequest: boolean,
         @Inject(PAYMENT_METHODS)
         private readonly paymentMethods: PaymentMethodData[],
         @Inject(PAYMENT_OPTIONS)
@@ -27,7 +21,7 @@ export class PaymentRequestService {
         methods: PaymentMethodData[] = this.paymentMethods,
         options: PaymentOptions = this.paymentOptions,
     ): Promise<PaymentResponse> {
-        if (!this.windowRef.PaymentRequest) {
+        if (!this.canRequest) {
             return Promise.reject(
                 new Error('Payment Request is not supported in your browser'),
             );

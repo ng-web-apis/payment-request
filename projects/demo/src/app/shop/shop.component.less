@@ -1,0 +1,61 @@
+:host {
+    display: flex;
+}
+
+.items {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 150px;
+    margin: 12px;
+    padding: 16px 16px 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid gainsboro;
+    border-radius: 8px;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+    }
+}
+
+.item-label {
+    cursor: inherit;
+}
+
+.item-price {
+    font-size: smaller;
+}
+
+.item-image {
+    margin-bottom: 12px;
+}
+
+.total {
+    margin-top: 16px;
+}
+
+.shopping-card-item {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.shopping-cart {
+    margin-right: 12px;
+    width: 168px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(240, 240, 240);
+    padding: 0 16px;
+    border-radius: 8px;
+}
+
+.buy-button {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
