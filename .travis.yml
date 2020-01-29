@@ -14,6 +14,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $github_token
-  local_dir: dist/demo
+  local_dir: dist/demo/browser
   on:
     branch: master
