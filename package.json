@@ -1,6 +1,6 @@
 {
     "name": "@ng-web-apis/payment-request",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "This is a library for declarative use of Payment Request API with Angular",
     "keywords": [
         "angular",
@@ -43,7 +43,7 @@
         "test:payment-request": "ng run payment-request:test",
         "test:payment-request:watch": "ng run payment-request:test --watch=true",
         "prepublish": "npm run build && ng build demo --configuration=production",
-        "publish": "npm publish ./dist/audio"
+        "publish": "npm publish ./dist/payment-request"
     },
     "license": "MIT",
     "author": {
