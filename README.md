@@ -8,7 +8,7 @@
 [![Coveralls github](https://img.shields.io/coveralls/github/ng-web-apis/payment-request)](https://coveralls.io/github/ng-web-apis/payment-request?branch=master)
 [![angular-open-source-starter](https://img.shields.io/badge/made%20with-angular--open--source--starter-d81676?logo=angular)](https://github.com/TinkoffCreditSystems/angular-open-source-starter)
 
-Angular does not have any abstractions over [PaymentRequest API](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API). This library can propose you two ways to use this API with Angular of 6+ version.
+Angular does not have any abstractions over [Payment Request API](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API). This library provides you two ways to use this API with Angular of 6+ version.
 
 ## Install
 
@@ -80,7 +80,7 @@ import {PaymentRequestModule} from '@ng-web-apis/payment-request';
 export class YourModule {}
 ```
 
-As a good example of usage you can take [a project live demo on CodeSandbox](https://codesandbox.io/s/github/ng-web-apis/payment-request/tree/master/projects/demo)
+As a good example of usage you can take a look at [a project live demo on CodeSandbox](https://codesandbox.io/s/github/ng-web-apis/payment-request/tree/master/projects/demo)
 
 #### waPayment
 
@@ -89,7 +89,7 @@ waPayment directive defines a scope for a new payment and needs [PaymentItem](ht
 How to use:
 
 ```html
-<any-element waPayment [total]="total">
+<any-element waPayment [paymentTotal]="total">
     ...
 </any-element>
 ```
@@ -110,12 +110,12 @@ Additional inputs:
 
 #### waPaymentItem
 
-Each item of the payment is a waPaymentItem directive. It is a declarative [PaymentItem](https://www.w3.org/TR/payment-request/#paymentitem-dictionary) for your Payment
+Each item of the payment is a `waPaymentItem` directive. It is a declarative [PaymentItem](https://www.w3.org/TR/payment-request/#paymentitem-dictionary) for your Payment
 
 How to use:
 
 ```html
-<any-element waPayment [total]="total">
+<any-element waPayment [paymentTotal]="total">
     <any-element
         *ngFor="let item of items"
         waPaymentItem
@@ -127,7 +127,7 @@ How to use:
 </any-element>
 ```
 
-It implements an [PaymentItem](https://microsoft.github.io/PowerBI-JavaScript/interfaces/_node_modules_typedoc_node_modules_typescript_lib_lib_dom_d_.paymentitem.html)
+It implements [PaymentItem](https://microsoft.github.io/PowerBI-JavaScript/interfaces/_node_modules_typedoc_node_modules_typescript_lib_lib_dom_d_.paymentitem.html)
 
 Required inputs:
 
@@ -141,12 +141,12 @@ Additional inputs:
 
 #### waPaymentSubmit
 
-This directive starts a PaymentRequest modal in your browser that returns [PaymentResponse](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse) or an error
+This directive starts a Payment Request modal in your browser that returns [PaymentResponse](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse) or an error
 
 How to use:
 
 ```html
-<any-element waPayment [total]="total">
+<any-element waPayment [paymentTotal]="total">
     ...
     <button
         (waPaymentSubmit)="onPayment($event)"
@@ -161,13 +161,13 @@ Outputs:
 
 -   `waPaymentSubmit` emits [PaymentResponse](https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse) object to handle a payment request result
 
--   `waPaymentError` emits an `Error` or `DOMException` with information about user's problem that does not allow to pay with PaymentRequest API
+-   `waPaymentError` emits an `Error` or `DOMException` with information about user's problem that did not allow payment to proceed
 
 ## Tokens
 
-The library provides also some tokens to simplify working with PaymentRequest API:
+The library also provides some tokens to simplify working with Payment Request API:
 
--   `PAYMENT_REQUEST_SUPPORT` returns `true` if user's browser supports PaymentRequest API
+-   `PAYMENT_REQUEST_SUPPORT` returns `true` if user's browser supports Payment Request API
 
 ```js
 export class YourComponent {
