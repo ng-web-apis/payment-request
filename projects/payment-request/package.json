@@ -1,6 +1,6 @@
 {
     "name": "@ng-web-apis/payment-request",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "peerDependencies": {
         "@angular/common": ">=6.0.0",
         "@angular/core": ">=6.0.0",
@@ -23,7 +23,9 @@
         "email": "79601794011@ya.ru",
         "url": "http://marsibarsi.me/"
     },
-    "contributors": ["Alex Inkin <alexander@inkin.ru>"],
+    "contributors": [
+        "Alex Inkin <alexander@inkin.ru>"
+    ],
     "repository": "https://github.com/ng-web-apis/payment-request",
     "bugs": "https://github.com/ng-web-apis/payment-request/issues",
     "homepage": "https://github.com/ng-web-apis/payment-request#README"
