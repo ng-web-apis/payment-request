@@ -35,8 +35,6 @@
                     },
                     "configurations": {
                         "production": {
-                            "baseHref": "/payment-request/",
-                            "deployUrl": "/payment-request/",
                             "optimization": true,
                             "outputHashing": "all",
                             "sourceMap": false,

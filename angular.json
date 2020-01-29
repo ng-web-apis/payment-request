@@ -29,11 +29,16 @@
                             },
                             "projects/demo/src/favicon.ico"
                         ],
-                        "styles": ["projects/demo/src/styles.css", "node_modules/highlight.js/styles/idea.css"],
+                        "styles": [
+                            "projects/demo/src/styles.css",
+                            "node_modules/highlight.js/styles/idea.css"
+                        ],
                         "scripts": []
                     },
                     "configurations": {
                         "production": {
+                            "baseHref": "/payment-request/",
+                            "deployUrl": "/payment-request/",
                             "optimization": true,
                             "outputHashing": "all",
                             "sourceMap": false,
