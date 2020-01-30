@@ -9,36 +9,39 @@
 </div>
 
 <div class="shopping-cart" waPayment [paymentTotal]="total">
-    <h4>
-        Shopping Cart
-    </h4>
+    <div class="sticky">
+        <h4>
+            Shopping Cart
+        </h4>
 
-    <ng-container *ngIf="shippingCart.length > 0; else noItems">
-        <div
-            *ngFor="let cartItem of shippingCart"
-            waPaymentItem
-            class="shopping-card-item"
-            [paymentLabel]="cartItem.label"
-            [paymentAmount]="cartItem.amount"
-        >
-            {{ cartItem.label }} ({{ cartItem.amount.value }}
-            {{ cartItem.amount.currency }})
+        <ng-container *ngIf="shippingCart.length > 0; else noItems">
+            <div
+                *ngFor="let cartItem of shippingCart"
+                waPaymentItem
+                class="shopping-card-item"
+                [paymentLabel]="cartItem.label"
+                [paymentAmount]="cartItem.amount"
+            >
+                {{ cartItem.label }} ({{ cartItem.amount.value }}
+                {{ cartItem.amount.currency }})
+            </div>
+        </ng-container>
+        <ng-template #noItems>
+            Nothing added
+        </ng-template>
+
+        <div class="total">
+            <b>Total:</b>
+            {{ totalSum }} ₽
         </div>
-    </ng-container>
-    <ng-template #noItems>
-        Nothing added
-    </ng-template>
 
-    <div class="total">
-        <b>Total:</b>
-        {{ totalSum }} ₽
+        <button
+            class="buy-button"
+            [disabled]="shippingCart.length === 0"
+            (waPaymentSubmit)="onPayment($event)"
+            (waPaymentError)="onPaymentError($event)"
+        >
+            Buy
+        </button>
     </div>
-
-    <button
-        class="buy-button"
-        (waPaymentSubmit)="onPayment($event)"
-        (waPaymentError)="onPaymentError($event)"
-    >
-        Buy
-    </button>
 </div>

@@ -13,8 +13,8 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "baseHref": "/",
-                        "deployUrl": "/",
+                        "baseHref": "/payment-request/",
+                        "deployUrl": "/payment-request/",
                         "outputPath": "dist/demo/browser",
                         "index": "projects/demo/src/index.html",
                         "main": "projects/demo/src/main.browser.ts",
@@ -31,31 +31,10 @@
                         ],
                         "styles": [
                             "projects/demo/src/styles.css",
+                            "projects/demo/src/payment-request.css",
                             "node_modules/highlight.js/styles/idea.css"
                         ],
                         "scripts": []
-                    },
-                    "configurations": {
-                        "production": {
-                            "baseHref": "/payment-request/",
-                            "deployUrl": "/payment-request/",
-                            "optimization": true,
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "extractCss": true,
-                            "namedChunks": false,
-                            "aot": true,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true,
-                            "budgets": [
-                                {
-                                    "type": "initial",
-                                    "maximumWarning": "2mb",
-                                    "maximumError": "5mb"
-                                }
-                            ]
-                        }
                     }
                 },
                 "serve": {

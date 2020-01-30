@@ -3,9 +3,16 @@
 }
 
 .items {
-    flex: 1;
+    flex: 2;
     display: flex;
     flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+    .items {
+        max-width: 50%;
+        justify-content: flex-end;
+    }
 }
 
 .item {
@@ -17,10 +24,11 @@
     align-items: center;
     border: 1px solid gainsboro;
     border-radius: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
 
     &:hover {
-        cursor: pointer;
-        transform: scale(1.02);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
     }
 }
 
@@ -36,6 +44,11 @@
     margin-bottom: 12px;
 }
 
+.sticky {
+    position: sticky;
+    top: 16px;
+}
+
 .total {
     margin-top: 16px;
 }
@@ -46,16 +59,25 @@
 }
 
 .shopping-cart {
-    margin-right: 12px;
-    width: 168px;
-    display: flex;
-    flex-direction: column;
+    flex: 1;
+    max-width: 168px;
     background-color: rgb(240, 240, 240);
     padding: 0 16px;
     border-radius: 8px;
 }
 
 .buy-button {
+    width: 100%;
     margin-top: 20px;
     margin-bottom: 8px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: default;
+        opacity: 0.56;
+    }
 }

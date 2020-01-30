@@ -1,0 +1,29 @@
+main {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+pre {
+    max-width: 90vw;
+    margin: 0 auto;
+    border: #f3f3f3 solid 1px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+code {
+    background-color: #f8f8f8 !important;
+}
+
+span.hljs-tag {
+    background: transparent;
+}
+
+blockquote {
+    box-shadow: inset 4px 0 whitesmoke;
+    margin-left: 0;
+    padding-left: 30px;
+    font-style: italic;
+}
