@@ -9,7 +9,7 @@ import {PAYMENT_REQUEST_SUPPORT} from '../tokens/payment-request-support';
 })
 export class PaymentRequestService {
     constructor(
-        @Inject(PAYMENT_REQUEST_SUPPORT) private readonly canRequest: boolean,
+        @Inject(PAYMENT_REQUEST_SUPPORT) private readonly supported: boolean,
         @Inject(PAYMENT_METHODS)
         private readonly paymentMethods: PaymentMethodData[],
         @Inject(PAYMENT_OPTIONS)
@@ -21,7 +21,7 @@ export class PaymentRequestService {
         methods: PaymentMethodData[] = this.paymentMethods,
         options: PaymentOptions = this.paymentOptions,
     ): Promise<PaymentResponse> {
-        if (!this.canRequest) {
+        if (!this.supported) {
             return Promise.reject(
                 new Error('Payment Request is not supported in your browser'),
             );
@@ -29,14 +29,14 @@ export class PaymentRequestService {
 
         const gateway = new PaymentRequest(methods, details, options);
 
-        return gateway.canMakePayment().then(canPay => {
-            if (!canPay) {
-                return Promise.reject(
-                    new Error('Payment Request cannot make the payment'),
-                );
-            }
-
-            return gateway.show();
-        });
+        return gateway
+            .canMakePayment()
+            .then(canPay =>
+                canPay
+                    ? gateway.show()
+                    : Promise.reject(
+                          new Error('Payment Request cannot make the payment'),
+                      ),
+            );
     }
 }
