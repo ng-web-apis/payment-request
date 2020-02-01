@@ -6,7 +6,6 @@ import {PaymentRequestModule} from '@ng-web-apis/payment-request';
 import {HighlightLanguage, HighlightModule} from 'ngx-highlightjs';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app.routes';
-import {HeaderComponent} from './header/header.component';
 
 import * as less from 'highlight.js/lib/languages/less';
 import * as typescript from 'highlight.js/lib/languages/typescript';
@@ -32,7 +31,7 @@ export function hljsLanguages(): ReadonlyArray<HighlightLanguage> {
             languages: hljsLanguages,
         }),
     ],
-    declarations: [AppComponent, HeaderComponent, ShopComponent],
+    declarations: [AppComponent, ShopComponent],
     providers: [
         {
             provide: LocationStrategy,

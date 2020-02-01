@@ -29,6 +29,7 @@
                         ],
                         "styles": [
                             "src/styles.css",
+                            "src/payment-request.css",
                             "node_modules/highlight.js/styles/idea.css"
                         ],
                         "scripts": []

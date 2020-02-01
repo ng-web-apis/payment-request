@@ -3,7 +3,7 @@ import {DIRECTIVES_SAMPLE} from './samples/directives.sample';
 import {SERVICE_SAMPLE} from './samples/service.sample';
 
 @Component({
-    selector: 'my-app',
+    selector: 'main',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,

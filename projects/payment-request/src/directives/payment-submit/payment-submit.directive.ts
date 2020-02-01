@@ -36,6 +36,6 @@ export class PaymentSubmitDirective {
 
         this.waPaymentSubmit = requests$.pipe(filter(response => !isError(response)));
 
-        this.waPaymentError = requests$.pipe(filter(response => isError(response)));
+        this.waPaymentError = requests$.pipe(filter(isError));
     }
 }
