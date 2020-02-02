@@ -2,7 +2,7 @@
 
 > Part of <img src="projects/demo/src/assets/web-api.svg" align="top"> [Web APIs for Angular](https://ng-web-apis.github.io/)
 
-[![npm version](https://img.shields.io/npm/v/@ng-web-apis/payment-request.svg)](https://npmjs.com/package/ng-web-apis/payment-request)
+[![npm version](https://img.shields.io/npm/v/@ng-web-apis/payment-request.svg)](https://npmjs.com/package/@ng-web-apis/payment-request)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@ng-web-apis/payment-request)
 [![Travis (.org)](https://img.shields.io/travis/ng-web-apis/payment-request)](https://travis-ci.org/ng-web-apis/payment-request)
 [![Coveralls github](https://img.shields.io/coveralls/github/ng-web-apis/payment-request)](https://coveralls.io/github/ng-web-apis/payment-request?branch=master)
