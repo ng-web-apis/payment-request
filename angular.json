@@ -24,7 +24,7 @@
                         "assets": [
                             {
                                 "glob": "**/*",
-                                "input": "projects/demo/src/assets/",
+                                "input": "projects/demo/src/payment-reqeust/assets/",
                                 "output": "./assets/"
                             },
                             "projects/demo/src/favicon.ico"
