@@ -1,8 +1,6 @@
 /* Base demo styles */
 body,
 html {
-    display: flex;
-    flex-direction: column;
     margin: 0;
     height: 100%;
     font-family: Roboto, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
@@ -35,7 +33,7 @@ footer {
 }
 
 a {
-    color: skyblue;
+    color: #1976D2;
     text-decoration: none;
 }
 

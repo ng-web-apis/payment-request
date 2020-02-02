@@ -1,4 +1,4 @@
-import {LocationStrategy, PathLocationStrategy} from '@angular/common';
+import {APP_BASE_HREF, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
@@ -36,6 +36,10 @@ export function hljsLanguages(): ReadonlyArray<HighlightLanguage> {
         {
             provide: LocationStrategy,
             useClass: PathLocationStrategy,
+        },
+        {
+            provide: APP_BASE_HREF,
+            useValue: '',
         },
     ],
 })
