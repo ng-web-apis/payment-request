@@ -42,8 +42,7 @@
         "build:payment-request": "ng run payment-request:build",
         "test:payment-request": "ng run payment-request:test",
         "test:payment-request:watch": "ng run payment-request:test --watch=true",
-        "prepublish": "npm run build && ng build demo",
-        "publish": "npm publish ./dist/payment-request"
+        "publish": "npm run build && ng build demo && npm publish ./dist/payment-request"
     },
     "license": "MIT",
     "author": {
