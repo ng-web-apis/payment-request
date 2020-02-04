@@ -4,7 +4,8 @@
     "peerDependencies": {
         "@angular/common": ">=6.0.0",
         "@angular/core": ">=6.0.0",
-        "@ng-web-apis/common": ">=1.0.0"
+        "@ng-web-apis/common": ">=1.0.0",
+        "rxjs": ">=6.0.0"
     },
     "description": "This is a library for declarative use of Payment Request API with Angular",
     "keywords": [
@@ -23,9 +24,7 @@
         "email": "79601794011@ya.ru",
         "url": "http://marsibarsi.me/"
     },
-    "contributors": [
-        "Alex Inkin <alexander@inkin.ru>"
-    ],
+    "contributors": ["Alex Inkin <alexander@inkin.ru>"],
     "repository": "https://github.com/ng-web-apis/payment-request",
     "bugs": "https://github.com/ng-web-apis/payment-request/issues",
     "homepage": "https://github.com/ng-web-apis/payment-request#README"

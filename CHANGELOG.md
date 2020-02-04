@@ -10,7 +10,3 @@ All notable changes to this project will be documented in this file. See [standa
 -   **payment-request:** `PaymentRequestService` add ([4c14da3](https://github.com/ng-web-apis/payment-request/commit/4c14da3))
 -   **tokens:** add payment methods and payment options ([aeb474d](https://github.com/ng-web-apis/payment-request/commit/aeb474d))
 -   **tokens:** add support token ([9014a33](https://github.com/ng-web-apis/payment-request/commit/9014a33))
-
-# Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
