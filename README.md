@@ -1,4 +1,4 @@
-# ![ng-web-apis logo](https://github.com/ng-web-apis/payment-request/blob/master/projects/demo/src/assets/logo.svg) Payment Request API for Angular
+# ![ng-web-apis logo](projects/demo/src/assets/logo.svg) Payment Request API for Angular
 
 > Part of <img src="projects/demo/src/assets/web-api.svg" align="top"> [Web APIs for Angular](https://ng-web-apis.github.io/)
 
