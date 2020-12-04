@@ -76,7 +76,7 @@
         "rxjs": "^6.5.2",
         "tslib": "^1.10.0",
         "zone.js": "~0.8.29",
-        "highlight.js": "^9.15.5",
+        "highlight.js": "^10.4.1",
         "ngx-highlightjs": "3.0.3"
     },
     "devDependencies": {
